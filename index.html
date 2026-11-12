@@ -1,1 +1,1617 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas dos Carros | Veículos de Procedência - Belo Horizonte</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        cyber: {
+                            dark: '#09090b',
+                            surface: '#11131a',
+                            card: '#161922',
+                            border: '#232734'
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        body {
+            background-color: #09090b;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Luxury Tech Grid Background */
+        .bg-cyber-grid {
+            background-image: 
+                radial-gradient(rgba(245, 158, 11, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(9, 9, 11, 0.92), rgba(9, 9, 11, 0.98));
+            background-size: 28px 28px, 100% 100%;
+        }
+
+        /* Metallic Gold Gradient Text & Buttons */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #fde68a 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 55%, #d97706 100%);
+        }
+
+        .glass-cyber {
+            background: rgba(17, 19, 26, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        /* 360-Degree Orbital Orange Glow around Featured Card */
+        @keyframes orbitRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .animate-orbit-slow {
+            animation: orbitRotate 4.5s linear infinite;
+        }
+        .conic-orange-aura {
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                rgba(234, 88, 12, 0.22) 75deg,
+                #ea580c 135deg,
+                #f97316 180deg,
+                #fbbf24 215deg,
+                rgba(245, 158, 11, 0.2) 275deg,
+                transparent 360deg
+            );
+        }
+        .conic-orange-border {
+            background: conic-gradient(
+                from 0deg,
+                rgba(249, 115, 22, 0.14) 0deg,
+                rgba(234, 88, 12, 0.28) 115deg,
+                #ea580c 155deg,
+                #f97316 185deg,
+                #fbbf24 212deg,
+                rgba(249, 115, 22, 0.18) 260deg,
+                rgba(249, 115, 22, 0.14) 360deg
+            );
+        }
+
+        @keyframes orangeSupportPulse {
+            0%, 100% { opacity: 0.35; }
+            50% { opacity: 0.65; }
+        }
+        .animate-orange-support {
+            animation: orangeSupportPulse 3.2s ease-in-out infinite;
+        }
+
+        /* Custom Range Slider */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #1e293b;
+            height: 6px;
+            border-radius: 999px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #f59e0b;
+            cursor: pointer;
+            border: 2px solid #09090b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-cyber-dark text-slate-100 antialiased selection:bg-amber-500 selection:text-zinc-950">
+
+    <!-- TOP STORE INFO BAR -->
+    <div class="bg-zinc-950 border-b border-slate-800/80 text-[11px] text-slate-400 py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-4">
+                <span id="storeStatusBadge" class="inline-flex items-center gap-1.5 font-semibold text-emerald-400">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Aberto Agora</span>
+                </span>
+                <span class="hidden sm:inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-amber-400"></i>
+                    R. José Carcheno, 180 - Jaqueline, Belo Horizonte - MG
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/lucasdoscarros?utm_source=ig_web_button_share_sheet&exln=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition inline-flex items-center gap-1">
+                    <i class="fa-brands fa-instagram text-pink-400"></i> @lucasdoscarros
+                </a>
+                <a href="tel:+5531994760811" class="hover:text-amber-400 transition inline-flex items-center gap-1 font-semibold text-slate-300">
+                    <i class="fa-solid fa-phone text-amber-400"></i> (31) 99476-0811
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY ALIGNED HEADER NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-cyber border-b border-amber-500/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Brand Emblem & Title -->
+            <a href="#" class="flex items-center gap-3 flex-shrink-0 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-amber-500/50 flex items-center justify-center shadow-lg shadow-amber-500/10 group-hover:border-amber-400 transition">
+                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 3L35 11.5V28.5L20 37L5 28.5V11.5L20 3Z" stroke="#F59E0B" stroke-width="2.2"/>
+                        <path d="M10 22C13.5 17 22 15.5 30 19.5" stroke="#FBBF24" stroke-width="2.2" stroke-linecap="round"/>
+                        <path d="M20 27L21.2 29.4L23.8 29.8L21.9 31.6L22.3 34.2L20 33L17.7 34.2L18.1 31.6L16.2 29.8L18.8 29.4L20 27Z" fill="#F59E0B"/>
+                    </svg>
+                </div>
+                <div class="leading-tight">
+                    <div class="text-lg font-extrabold tracking-tight text-white">
+                        LUCAS <span class="text-gold-gradient">DOS CARROS</span>
+                    </div>
+                    <div class="text-[10px] font-semibold tracking-widest text-slate-400 uppercase">
+                        Veículos de Procedência
+                    </div>
+                </div>
+            </a>
+
+            <!-- Single-Line Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 font-semibold text-xs text-slate-300 uppercase tracking-wider whitespace-nowrap">
+                <a href="#estoque" class="hover:text-amber-400 transition-colors py-2 whitespace-nowrap">Estoque</a>
+                <a href="#vender" class="hover:text-amber-400 transition-colors py-2 whitespace-nowrap">Venda ou Troca</a>
+                <a href="#financiamento" class="hover:text-amber-400 transition-colors py-2 whitespace-nowrap">Financiamento</a>
+                <a href="#pericia" class="hover:text-amber-400 transition-colors py-2 whitespace-nowrap">Por que a Lucas?</a>
+                <a href="#avaliacoes" class="hover:text-amber-400 transition-colors py-2 whitespace-nowrap">Depoimentos</a>
+                <a href="#localizacao" class="hover:text-amber-400 transition-colors py-2 whitespace-nowrap">Localização</a>
+            </nav>
+
+            <!-- Standardized 3 Header Buttons -->
+            <div class="flex items-center gap-2.5 flex-shrink-0">
+                
+                <!-- Button 1: Comparar -->
+                <button type="button" onclick="openCompareModal()" id="compareBadgeBtn" class="hidden sm:inline-flex h-10 px-4 items-center justify-center gap-2 bg-cyber-card hover:bg-slate-800 text-slate-200 border border-slate-700/80 rounded-xl transition text-xs font-semibold whitespace-nowrap">
+                    <i class="fa-solid fa-code-compare text-cyan-400"></i>
+                    <span>Comparar</span>
+                    <span id="compareCount" class="bg-cyan-500 text-cyber-dark text-[10px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+
+                <!-- Button 2: Instagram -->
+                <a href="https://www.instagram.com/lucasdoscarros?utm_source=ig_web_button_share_sheet&exln=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"
+                   class="hidden md:inline-flex h-10 px-4 items-center justify-center gap-2 bg-gradient-to-r from-purple-900/40 via-pink-900/40 to-rose-900/40 hover:from-purple-800/60 text-pink-300 border border-pink-500/30 rounded-xl text-xs font-semibold transition whitespace-nowrap">
+                    <i class="fa-brands fa-instagram text-sm text-pink-400"></i>
+                    <span>Instagram</span>
+                </a>
+
+                <!-- Button 3: Consultor (WhatsApp) -->
+                <a href="https://wa.me/5531994760811?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Lucas%20dos%20Carros%20e%20gostaria%20de%20atendimento." target="_blank" rel="noopener noreferrer"
+                   class="h-10 px-4 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-950/50 transition whitespace-nowrap transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Consultor</span>
+                </a>
+
+                <!-- Mobile Hamburger Button -->
+                <button type="button" onclick="toggleMobileMenu()" aria-label="Abrir Menu" class="lg:hidden h-10 w-10 inline-flex items-center justify-center rounded-xl bg-cyber-card border border-slate-700 text-slate-200 hover:text-amber-400">
+                    <i class="fa-solid fa-bars text-base"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-cyber-surface border-t border-slate-800 px-4 pt-3 pb-5 space-y-2">
+            <a href="#estoque" onclick="closeMobileMenu()" class="block py-2.5 px-3 rounded-lg text-sm font-semibold text-slate-200 hover:bg-slate-800">Estoque Selecionado</a>
+            <a href="#vender" onclick="closeMobileMenu()" class="block py-2.5 px-3 rounded-lg text-sm font-semibold text-slate-200 hover:bg-slate-800">Venda ou Troca</a>
+            <a href="#financiamento" onclick="closeMobileMenu()" class="block py-2.5 px-3 rounded-lg text-sm font-semibold text-slate-200 hover:bg-slate-800">Simular Financiamento</a>
+            <a href="#pericia" onclick="closeMobileMenu()" class="block py-2.5 px-3 rounded-lg text-sm font-semibold text-slate-200 hover:bg-slate-800">Por que a Lucas?</a>
+            <a href="#avaliacoes" onclick="closeMobileMenu()" class="block py-2.5 px-3 rounded-lg text-sm font-semibold text-slate-200 hover:bg-slate-800">Depoimentos</a>
+            <a href="#localizacao" onclick="closeMobileMenu()" class="block py-2.5 px-3 rounded-lg text-sm font-semibold text-slate-200 hover:bg-slate-800">Localização</a>
+            <div class="pt-2 grid grid-cols-2 gap-2">
+                <button type="button" onclick="closeMobileMenu(); openCompareModal();" class="h-10 px-3 flex items-center justify-center gap-2 bg-cyber-card border border-slate-700 rounded-xl text-xs font-semibold text-slate-200">
+                    <i class="fa-solid fa-code-compare text-cyan-400"></i>
+                    Comparar (<span id="compareCountMobile">0</span>)
+                </button>
+                <a href="https://www.instagram.com/lucasdoscarros?utm_source=ig_web_button_share_sheet&exln=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="h-10 px-3 flex items-center justify-center gap-2 bg-pink-950/50 border border-pink-500/30 rounded-xl text-xs font-semibold text-pink-300">
+                    <i class="fa-brands fa-instagram text-pink-400"></i>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cyber-grid pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Presentation Copy -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-cyber border border-amber-500/30 text-amber-300 text-xs font-bold tracking-wider uppercase">
+                    <span class="text-amber-400 tracking-tighter">★★★★★</span>
+                    <span>REFERÊNCIA EM TRANSPARÊNCIA E QUALIDADE</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+                    Seu próximo carro com <span class="text-gold-gradient">Procedência Garantida</span> e <span class="text-white">Segurança.</span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Especialistas em <strong class="text-white font-semibold">Compra, Venda e Troca</strong> de seminovos periciados. Laudo cautelar 100% aprovado, sem sinistro ou leilão.
+                </p>
+
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#estoque" class="w-full sm:w-auto px-8 py-4 bg-gold-gradient hover:opacity-95 text-cyber-dark font-extrabold text-sm rounded-xl shadow-xl shadow-amber-500/20 flex items-center justify-center gap-3 transition transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-car-side text-lg"></i>
+                        Ver Estoque Selecionado
+                    </a>
+                    <a href="#vender" class="w-full sm:w-auto px-8 py-4 bg-cyber-card hover:bg-slate-800 text-slate-100 font-bold text-sm rounded-xl border border-slate-700 hover:border-amber-500/50 flex items-center justify-center gap-3 transition">
+                        <i class="fa-solid fa-handshake text-amber-400"></i>
+                        Avaliar Meu Carro
+                    </a>
+                </div>
+
+                <!-- Live Statistics Bar -->
+                <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-xl mx-auto lg:mx-0">
+                    <div class="p-3 rounded-2xl bg-cyber-surface/80 border border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+                        <div class="text-[11px] text-slate-400 font-semibold mt-0.5">Cautelar Aprovada</div>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-cyber-surface/80 border border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">+500</div>
+                        <div class="text-[11px] text-slate-400 font-semibold mt-0.5">Carros Entregues</div>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-cyber-surface/80 border border-slate-800">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white">Nota 5.0</div>
+                        <div class="text-[11px] text-slate-400 font-semibold mt-0.5">Avaliação Google</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Featured Vehicle Card with 360° Orbital Orange Glow -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    
+                    <!-- Pulsing Warm Orange Support Halo -->
+                    <div class="absolute -inset-2 bg-gradient-to-tr from-orange-600/35 via-amber-500/20 to-orange-500/35 rounded-[28px] blur-xl pointer-events-none animate-orange-support"></div>
+
+                    <!-- Outer 360° Rotating Diffuse Orange Aura -->
+                    <div class="absolute -inset-3.5 rounded-[30px] overflow-hidden pointer-events-none blur-2xl opacity-85">
+                        <div class="absolute top-1/2 left-1/2 w-[220%] h-[220%] conic-orange-aura animate-orbit-slow"></div>
+                    </div>
+
+                    <!-- Crisp 2px Luminous Orbital Border Wrapper -->
+                    <div class="relative rounded-3xl p-[2px] overflow-hidden shadow-[0_0_45px_rgba(249,115,22,0.24)]">
+                        <!-- Rotating Orbital Border Beam -->
+                        <div class="absolute top-1/2 left-1/2 w-[220%] h-[220%] conic-orange-border animate-orbit-slow pointer-events-none"></div>
+
+                        <!-- Inner Dark Luxury Card -->
+                        <div class="relative bg-cyber-surface rounded-[22px] overflow-hidden p-6">
+                            
+                            <!-- Status Badge Header -->
+                            <div class="flex items-center justify-between text-xs mb-4 pb-3 border-b border-slate-800">
+                                <span class="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
+                                    <i class="fa-solid fa-star text-amber-400"></i> DESTAQUE DA SEMANA
+                                </span>
+                                <span class="text-slate-400 text-[10px] uppercase tracking-wider font-semibold">LAUDO CAUTELAR OK</span>
+                            </div>
+
+                            <div class="relative h-64 sm:h-72 rounded-2xl overflow-hidden mb-5 group bg-zinc-900">
+                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=80" 
+                                     alt="BMW 320i M Sport" 
+                                     class="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                                     onerror="this.src='https://images.unsplash.com/photo-1555215695-3004980adade?auto=format&fit=crop&w=1000&q=80'">
+                                
+                                <div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                                    Destaque Premium
+                                </div>
+                                <div class="absolute bottom-3 right-3 bg-cyber-dark/90 text-amber-400 border border-amber-500/40 text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 backdrop-blur-md">
+                                    <i class="fa-solid fa-shield-halved text-emerald-400"></i> Periciado 100%
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest">Sedan Esportivo</span>
+                                        <h3 class="text-xl font-bold text-white">BMW 320i 2.0 M Sport GP</h3>
+                                    </div>
+                                    <span class="text-xs font-semibold bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">2022</span>
+                                </div>
+
+                                <div class="grid grid-cols-3 gap-2 text-xs text-slate-300 py-2.5 border-y border-slate-800">
+                                    <span class="flex items-center gap-1.5 text-[11px]"><i class="fa-solid fa-gauge text-slate-500"></i> 24.000 km</span>
+                                    <span class="flex items-center gap-1.5 text-[11px]"><i class="fa-solid fa-gears text-slate-500"></i> Auto 8v</span>
+                                    <span class="flex items-center gap-1.5 text-[11px]"><i class="fa-solid fa-bolt text-cyan-400"></i> 184 cv</span>
+                                </div>
+
+                                <div class="pt-2 flex items-center justify-between">
+                                    <div>
+                                        <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Valor à Vista</div>
+                                        <div class="text-2xl font-extrabold text-gold-gradient">R$ 249.900</div>
+                                    </div>
+                                    <button type="button" onclick="openCarModal(2)" class="px-4 py-2.5 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-xl text-xs font-bold transition flex items-center gap-2">
+                                        Ver Detalhes <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INVENTORY SECTION -->
+    <section id="estoque" class="py-20 bg-cyber-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Showroom Digital Atualizado</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Estoque Selecionado</h2>
+                </div>
+                <p class="text-slate-400 text-sm max-w-md">
+                    Todos os veículos passam por vistoria cautelar rigorosa e revisão mecânica antes de irem para o pátio.
+                </p>
+            </div>
+
+            <!-- Interactive Filter & Search Controls -->
+            <div class="bg-cyber-surface border border-cyber-border rounded-2xl p-5 mb-10 space-y-5">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+                    <!-- Search Input -->
+                    <div class="lg:col-span-5 relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="searchInput" oninput="renderCars()" placeholder="Buscar por marca, modelo ou ano..." 
+                               class="w-full bg-cyber-dark border border-slate-700/80 focus:border-amber-500 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition">
+                    </div>
+
+                    <!-- Max Price Slider -->
+                    <div class="lg:col-span-7 bg-cyber-dark border border-slate-800 rounded-xl px-4 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center justify-between sm:justify-start gap-2">
+                            <span class="text-xs text-slate-400 font-semibold">Valor Máximo:</span>
+                            <span id="priceRangeValue" class="text-sm font-extrabold text-amber-400">Até R$ 300.000</span>
+                        </div>
+                        <input type="range" id="priceRange" min="45000" max="300000" step="5000" value="300000" oninput="updatePriceFilter(this.value)" class="w-full sm:w-64">
+                    </div>
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div class="flex flex-wrap items-center gap-2 pt-1">
+                    <button type="button" onclick="setCategory('Todos')" class="cat-btn active px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-cyber-dark transition">Todos</button>
+                    <button type="button" onclick="setCategory('SUV')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyber-card text-slate-300 hover:bg-slate-800 border border-slate-800 transition">SUVs</button>
+                    <button type="button" onclick="setCategory('Sedan')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyber-card text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Sedans</button>
+                    <button type="button" onclick="setCategory('Hatch')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyber-card text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Hatchbacks</button>
+                    <button type="button" onclick="setCategory('Pickup')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyber-card text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Pickups</button>
+                    <button type="button" onclick="setCategory('Esportivo')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyber-card text-slate-300 hover:bg-slate-800 border border-slate-800 transition">Esportivos</button>
+                    <button type="button" onclick="setCategory('Favoritos')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyber-card text-pink-300 hover:bg-slate-800 border border-slate-800 transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart text-pink-500"></i> Favoritos (<span id="favCountBadge">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vehicles Grid -->
+            <div id="carsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="emptyState" class="hidden text-center py-16 bg-cyber-surface border border-slate-800 rounded-3xl">
+                <i class="fa-solid fa-car-burst text-4xl text-slate-600 mb-3"></i>
+                <h3 class="text-lg font-bold text-white">Nenhum veículo encontrado com esses filtros</h3>
+                <p class="text-slate-400 text-sm mt-1 mb-5">Tente ampliar a faixa de preço ou limpar a busca.</p>
+                <button type="button" onclick="resetFilters()" class="px-6 py-2.5 bg-amber-500 text-cyber-dark font-bold text-xs rounded-xl">Limpar Filtros</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE 100% CAUTELAR INSPECTION SECTION -->
+    <section id="pericia" class="py-20 bg-cyber-surface border-y border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Selo Lucas de Qualidade</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Por que comprar na <span class="text-gold-gradient">Lucas dos Carros?</span></h2>
+                <p class="text-slate-400 text-sm mt-3">Clique nos pontos de verificação abaixo para conhecer o nosso protocolo rigoroso de procedência.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Diagnostic Selector Buttons -->
+                <div class="lg:col-span-5 space-y-3">
+                    <button type="button" onclick="selectScannerPoint(0)" class="scan-btn active w-full text-left p-4 rounded-2xl bg-amber-500/15 border border-amber-500/50 transition flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-amber-500 text-cyber-dark font-extrabold text-xs flex items-center justify-center">01</span>
+                            <span class="font-bold text-sm text-white">Estrutura, Longarinas e Chassi</span>
+                        </div>
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    </button>
+
+                    <button type="button" onclick="selectScannerPoint(1)" class="scan-btn w-full text-left p-4 rounded-2xl bg-cyber-card border border-slate-800 hover:border-slate-700 transition flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-extrabold text-xs flex items-center justify-center">02</span>
+                            <span class="font-bold text-sm text-slate-200">Consulta Leilão, Sinistro e Furto</span>
+                        </div>
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    </button>
+
+                    <button type="button" onclick="selectScannerPoint(2)" class="scan-btn w-full text-left p-4 rounded-2xl bg-cyber-card border border-slate-800 hover:border-slate-700 transition flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-extrabold text-xs flex items-center justify-center">03</span>
+                            <span class="font-bold text-sm text-slate-200">Revisão de Motor, Câmbio e Suspensão</span>
+                        </div>
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    </button>
+
+                    <button type="button" onclick="selectScannerPoint(3)" class="scan-btn w-full text-left p-4 rounded-2xl bg-cyber-card border border-slate-800 hover:border-slate-700 transition flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-extrabold text-xs flex items-center justify-center">04</span>
+                            <span class="font-bold text-sm text-slate-200">Aferição de Pintura e Originalidade</span>
+                        </div>
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    </button>
+
+                    <button type="button" onclick="selectScannerPoint(4)" class="scan-btn w-full text-left p-4 rounded-2xl bg-cyber-card border border-slate-800 hover:border-slate-700 transition flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-extrabold text-xs flex items-center justify-center">05</span>
+                            <span class="font-bold text-sm text-slate-200">Documentação e Transferência Ágil</span>
+                        </div>
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    </button>
+                </div>
+
+                <!-- Readout Display Panel -->
+                <div class="lg:col-span-7 bg-cyber-dark border border-amber-500/25 rounded-3xl p-8 relative overflow-hidden">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                        <span id="scanBadge" class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase">
+                            <i class="fa-solid fa-shield-check mr-1"></i> Protocolo Verificado
+                        </span>
+                        <span id="scanStepCode" class="text-xs font-bold text-slate-500">ITEM 01 / 05</span>
+                    </div>
+
+                    <h3 id="scanTitle" class="text-2xl font-extrabold text-white mb-3">Estrutura, Longarinas e Chassi</h3>
+                    <p id="scanDesc" class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Inspeção técnica minuciosa em todos os pontos estruturais, colunas, assoalho, painel corta-fogo e gravações originais de fábrica de chassi, motor e vidros. Garantimos integridade total sem batidas estruturais.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800">
+                        <div class="bg-cyber-surface p-4 rounded-2xl border border-slate-800">
+                            <div class="text-xs text-slate-400">Índice de Aprovação</div>
+                            <div id="scanMetric" class="text-lg font-extrabold text-amber-400 mt-0.5">100% Laudo Aprovado</div>
+                        </div>
+                        <div class="bg-cyber-surface p-4 rounded-2xl border border-slate-800">
+                            <div class="text-xs text-slate-400">Garantia da Loja</div>
+                            <div class="text-lg font-extrabold text-white mt-0.5">Motor e Câmbio Inclusos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCING SIMULATOR SECTION -->
+    <section id="financiamento" class="py-20 bg-cyber-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cyber-surface border border-amber-500/20 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Left Controls -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Crédito Facilitado</span>
+                            <h2 class="text-3xl font-extrabold text-white mt-1">Simulador de Financiamento</h2>
+                            <p class="text-slate-400 text-sm mt-1">Trabalhamos com os principais bancos e taxas competitivas, inclusive opção sem entrada sujeita à análise.</p>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div>
+                                <label for="calcCarSelect" class="block text-xs font-bold text-slate-300 uppercase mb-2">Selecione o Veículo ou Valor:</label>
+                                <select id="calcCarSelect" onchange="handleCalcCarChange()" class="w-full bg-cyber-dark border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label for="downPaymentSlider" class="text-xs font-bold text-slate-300 uppercase">Valor de Entrada:</label>
+                                    <span id="downPaymentDisplay" class="text-base font-extrabold text-amber-400">R$ 20.000</span>
+                                </div>
+                                <input type="range" id="downPaymentSlider" min="0" max="200000" step="1000" value="20000" oninput="updateCalculator()" class="w-full">
+                                <div class="flex gap-2 mt-3">
+                                    <button type="button" onclick="setDownPaymentPercent(0)" class="px-3 py-1.5 rounded-lg bg-cyber-dark border border-slate-700 hover:border-amber-500 text-xs font-semibold text-slate-300">Sem Entrada</button>
+                                    <button type="button" onclick="setDownPaymentPercent(0.20)" class="px-3 py-1.5 rounded-lg bg-cyber-dark border border-slate-700 hover:border-amber-500 text-xs font-semibold text-slate-300">20% Entrada</button>
+                                    <button type="button" onclick="setDownPaymentPercent(0.50)" class="px-3 py-1.5 rounded-lg bg-cyber-dark border border-slate-700 hover:border-amber-500 text-xs font-semibold text-slate-300">50% Entrada</button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Prazo de Parcelamento:</label>
+                                    <div class="grid grid-cols-5 gap-1.5">
+                                        <button type="button" onclick="setParcelas(12)" class="parcela-btn bg-slate-800 hover:bg-slate-700 text-slate-300 py-2 rounded-lg font-bold text-xs">12x</button>
+                                        <button type="button" onclick="setParcelas(24)" class="parcela-btn bg-slate-800 hover:bg-slate-700 text-slate-300 py-2 rounded-lg font-bold text-xs">24x</button>
+                                        <button type="button" onclick="setParcelas(36)" class="parcela-btn bg-slate-800 hover:bg-slate-700 text-slate-300 py-2 rounded-lg font-bold text-xs">36x</button>
+                                        <button type="button" onclick="setParcelas(48)" class="parcela-btn active bg-amber-500/20 text-amber-400 border border-amber-500/50 py-2 rounded-lg font-bold text-xs">48x</button>
+                                        <button type="button" onclick="setParcelas(60)" class="parcela-btn bg-slate-800 hover:bg-slate-700 text-slate-300 py-2 rounded-lg font-bold text-xs">60x</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="bankSelect" class="block text-xs font-bold text-slate-300 uppercase mb-2">Banco Parceiro:</label>
+                                    <select id="bankSelect" onchange="updateCalculator()" class="w-full bg-cyber-dark border border-slate-700 rounded-xl px-3 py-2 text-xs text-white outline-none">
+                                        <option value="0.0159">Santander Financiamentos</option>
+                                        <option value="0.0165">Itaú Veículos</option>
+                                        <option value="0.0169">Banco BV</option>
+                                        <option value="0.0162">Bradesco Financiamentos</option>
+                                        <option value="0.0155">Banco Safra</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Result Card -->
+                    <div class="lg:col-span-5 bg-cyber-dark border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-5">
+                        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">Resumo da Simulação</div>
+                        
+                        <div class="space-y-3 text-sm border-b border-slate-800 pb-5">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Valor do Veículo:</span>
+                                <span id="summaryVehiclePrice" class="font-bold text-white">R$ 89.900</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Entrada Selecionada:</span>
+                                <span id="summaryDownPayment" class="font-bold text-emerald-400">R$ 20.000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Valor Financiado:</span>
+                                <span id="summaryFinanced" class="font-bold text-slate-200">R$ 69.900</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs text-slate-400 mb-1">Parcela Mensal Estimada (<span id="summaryTerm">48x</span>):</div>
+                            <div id="monthlyInstallment" class="text-3xl sm:text-4xl font-extrabold text-gold-gradient">R$ 2.094,50</div>
+                            <p class="text-[11px] text-slate-500 mt-2">*Valores estimados sujeitos à análise de crédito e score bancário.</p>
+                        </div>
+
+                        <button type="button" onclick="sendFinancingWhatsApp()" class="w-full py-4 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-sm rounded-xl shadow-lg flex items-center justify-center gap-2 transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Aprovar Ficha pelo WhatsApp
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELL OR TRADE-IN SECTION -->
+    <section id="vender" class="py-20 bg-cyber-surface border-t border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-5">
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Avaliação Justa e Rápida</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Quer vender ou dar seu carro na troca?</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Pagamos à vista no PIX ou oferecemos a melhor valorização do seu seminovo na troca por qualquer veículo do nosso estoque.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 pt-2">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400"></i> Avaliação presencial ou pré-avaliação online</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400"></i> Quitação de financiamento em aberto</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400"></i> Pagamento rápido e transferência segura</li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-7 bg-cyber-dark border border-slate-800 rounded-3xl p-6 sm:p-8">
+                    <form id="tradeInForm" onsubmit="submitTradeIn(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="ownerName" class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Seu Nome *</label>
+                                <input type="text" id="ownerName" required placeholder="Ex: Carlos Eduardo" class="w-full bg-cyber-surface border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                            </div>
+                            <div>
+                                <label for="ownerPhone" class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Seu WhatsApp *</label>
+                                <input type="tel" id="ownerPhone" required placeholder="(31) 99999-9999" class="w-full bg-cyber-surface border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="tradeCarModel" class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Marca / Modelo / Ano *</label>
+                                <input type="text" id="tradeCarModel" required placeholder="Ex: Onix LTZ 1.0 Turbo 2022" class="w-full bg-cyber-surface border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                            </div>
+                            <div>
+                                <label for="tradeCarKm" class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Quilometragem (KM)</label>
+                                <input type="text" id="tradeCarKm" placeholder="Ex: 42.000 km" class="w-full bg-cyber-surface border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="tradeIntention" class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Objetivo</label>
+                                <select id="tradeIntention" class="w-full bg-cyber-surface border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                                    <option value="Troca por veículo da loja">Dar na troca por carro da loja</option>
+                                    <option value="Venda direta à vista">Vender meu carro à vista</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="tradeCondition" class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Estado Geral</label>
+                                <select id="tradeCondition" class="w-full bg-cyber-surface border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                                    <option value="Impecável / Revisado">Impecável / Revisado</option>
+                                    <option value="Bom estado (detalhes leves)">Bom estado (detalhes leves)</option>
+                                    <option value="Possui financiamento ativo">Possui financiamento ativo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-gold-gradient hover:opacity-95 text-cyber-dark font-extrabold text-sm rounded-xl shadow-lg flex items-center justify-center gap-2 transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Solicitar Avaliação Agora
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GOOGLE REVIEWS SECTION -->
+    <section id="avaliacoes" class="py-20 bg-cyber-surface border-y border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold mb-3">
+                    <i class="fa-brands fa-google"></i> NOTA MÁXIMA 5.0 NO GOOGLE
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white min-h-[2.75rem] sm:min-h-[3.25rem]">
+                    Depoimentos dos <span id="typewriterText" class="text-gold-gradient">Nossos Clientes</span><span class="inline-block w-[3px] h-7 sm:h-9 bg-amber-400 ml-1 align-middle animate-pulse"></span>
+                </h2>
+                <p class="text-slate-400 text-sm mt-2">
+                    A transparência que garante a realização do sonho do seminovo ideal.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-cyber-dark border border-slate-800 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-400 text-sm">★★★★★</div>
+                        <span class="text-[11px] text-slate-500">Avaliação Google</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        "Atendimento nota 10 do Lucas! Comprei meu Compass com laudo cautelar completo, tudo muito transparente e sem enrolação. Recomendo de olhos fechados em BH."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-800/80">
+                        <div class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center">RM</div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Rafael Martins</div>
+                            <div class="text-[11px] text-slate-400">Belo Horizonte - MG</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cyber-dark border border-slate-800 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-400 text-sm">★★★★★</div>
+                        <span class="text-[11px] text-slate-500">Avaliação Google</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        "Dei meu carro usado na troca e consegui uma avaliação muito justa. O financiamento saiu no mesmo dia com taxa excelente. Carros realmente de procedência!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-800/80">
+                        <div class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center">FA</div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Fernanda Almeida</div>
+                            <div class="text-[11px] text-slate-400">Venda Nova - BH</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cyber-dark border border-slate-800 rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-400 text-sm">★★★★★</div>
+                        <span class="text-[11px] text-slate-500">Avaliação Google</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        "Loja séria e honesta. O carro veio higienizado, revisado e exatamente como anunciado no Instagram. Com certeza voltarei para futuras trocas."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-800/80">
+                        <div class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center">GS</div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Guilherme Souza</div>
+                            <div class="text-[11px] text-slate-400">Pampulha - BH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT SECTION -->
+    <section id="localizacao" class="py-20 bg-cyber-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <div class="lg:col-span-5 bg-cyber-surface border border-slate-800 rounded-3xl p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Visite Nosso Pátio</span>
+                        <h2 class="text-3xl font-extrabold text-white">Onde Estamos</h2>
+                        <p class="text-slate-400 text-sm">
+                            Venha tomar um café conosco e fazer um test-drive no seu próximo carro em Belo Horizonte.
+                        </p>
+
+                        <div class="space-y-4 pt-3 text-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-location-dot text-amber-400 mt-1"></i>
+                                <div>
+                                    <div class="font-bold text-white">Endereço da Loja</div>
+                                    <div class="text-slate-300">R. José Carcheno, 180 - Jaqueline, Belo Horizonte - MG, 31748-042</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-clock text-amber-400 mt-1"></i>
+                                <div>
+                                    <div class="font-bold text-white">Horário de Funcionamento</div>
+                                    <div class="text-slate-300">Segunda a Sexta: 08:00 às 18:00</div>
+                                    <div class="text-slate-300">Sábado: 08:00 às 13:00</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 mt-1"></i>
+                                <div>
+                                    <div class="font-bold text-white">Telefone / WhatsApp</div>
+                                    <div class="text-slate-300">(31) 99476-0811</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-800">
+                        <a href="https://www.google.com/maps/search/?api=1&query=R.+Jos%C3%A9+Carcheno%2C+180+-+Jaqueline%2C+Belo+Horizonte+-+MG%2C+31748-042" target="_blank" rel="noopener noreferrer"
+                           class="py-3 px-4 bg-cyber-card hover:bg-slate-800 border border-slate-700 rounded-xl text-xs font-bold text-white flex items-center justify-center gap-2 transition">
+                            <i class="fa-solid fa-map-location-dot text-amber-400"></i> Google Maps
+                        </a>
+                        <a href="https://waze.com/ul?q=R.+Jos%C3%A9+Carcheno+180+Jaqueline+Belo+Horizonte" target="_blank" rel="noopener noreferrer"
+                           class="py-3 px-4 bg-cyber-card hover:bg-slate-800 border border-slate-700 rounded-xl text-xs font-bold text-white flex items-center justify-center gap-2 transition">
+                            <i class="fa-brands fa-waze text-cyan-400"></i> Abrir no Waze
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-slate-800 min-h-[340px] bg-cyber-surface">
+                    <iframe 
+                        title="Localização Lucas dos Carros"
+                        src="https://maps.google.com/maps?q=R.%20Jos%C3%A9%20Carcheno,%20180%20-%20Jaqueline,%20Belo%20Horizonte%20-%20MG&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        class="w-full h-full min-h-[340px] border-0 grayscale contrast-125 opacity-90"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 border-t border-slate-800/80 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-zinc-900 border border-amber-500/40 flex items-center justify-center text-amber-400 font-extrabold">
+                    LC
+                </div>
+                <div>
+                    <div class="text-white font-bold text-sm">LUCAS DOS CARROS</div>
+                    <div>Veículos de Procedência • Compra • Venda • Troca</div>
+                </div>
+            </div>
+
+            <div class="text-center md:text-right space-y-1">
+                <div>R. José Carcheno, 180 - Jaqueline, Belo Horizonte - MG, 31748-042</div>
+                <div>WhatsApp: (31) 99476-0811 • Instagram: @lucasdoscarros</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VEHICLE DETAIL MODAL -->
+    <div id="carModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="bg-cyber-surface border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
+            <button type="button" onclick="closeCarModal()" aria-label="Fechar Modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="carModalBody">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPARISON MODAL -->
+    <div id="compareModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="bg-cyber-surface border border-slate-700 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                <h3 class="text-xl font-extrabold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-code-compare text-cyan-400"></i> Comparativo de Veículos
+                </h3>
+                <button type="button" onclick="closeCompareModal()" aria-label="Fechar Comparativo" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="compareModalBody">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/5531994760811?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Lucas%20dos%20Carros" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-emerald-500/50 transition transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow">1</span>
+    </a>
+
+    <!-- NON-BLOCKING TOAST NOTIFICATION -->
+    <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2.5 px-5 py-3 rounded-2xl bg-cyber-surface border border-amber-500/40 text-slate-100 text-xs font-semibold shadow-2xl backdrop-blur-xl">
+        <i class="fa-solid fa-circle-info text-amber-400 text-sm"></i>
+        <span id="toastMessage"></span>
+    </div>
+
+    <script>
+        // Vehicle Inventory Database
+        const carsData = [
+            {
+                id: 1,
+                name: 'Toyota Corolla Cross 2.0 XRE',
+                category: 'SUV',
+                year: 2023,
+                price: 149900,
+                km: '18.500 km',
+                transmission: 'Automático CVT',
+                fuel: 'Flex',
+                power: '177 cv',
+                badge: 'Único Dono',
+                images: [
+                    'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80'
+                ],
+                features: ['Bancos em Couro', 'Multimídia 9"', 'Chave Presencial', 'Ar Digital Dual Zone', 'Laudo Cautelar 100%']
+            },
+            {
+                id: 2,
+                name: 'BMW 320i 2.0 M Sport GP',
+                category: 'Esportivo',
+                year: 2022,
+                price: 249900,
+                km: '24.000 km',
+                transmission: 'Automático 8v',
+                fuel: 'Gasolina',
+                power: '184 cv',
+                badge: 'Destaque Premium',
+                images: [
+                    'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1555215695-3004980adade?auto=format&fit=crop&w=1000&q=80'
+                ],
+                features: ['Teto Solar Elétrico', 'Pacote M Sport', 'Som Harman Kardon', 'Faróis Full LED', 'Periciado 100%']
+            },
+            {
+                id: 3,
+                name: 'Jeep Compass Longitude T270',
+                category: 'SUV',
+                year: 2022,
+                price: 138900,
+                km: '31.200 km',
+                transmission: 'Automático 6v',
+                fuel: 'Turbo Flex',
+                power: '185 cv',
+                badge: 'Laudo Aprovado',
+                images: [
+                    'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80'
+                ],
+                features: ['Motor 1.3 Turbo', 'Painel Digital', 'Câmera de Ré', 'Rodas Aro 18', 'IPVA Pago']
+            },
+            {
+                id: 4,
+                name: 'Honda Civic Touring 1.5 Turbo',
+                category: 'Sedan',
+                year: 2021,
+                price: 142500,
+                km: '38.000 km',
+                transmission: 'Automático CVT',
+                fuel: 'Gasolina',
+                power: '173 cv',
+                badge: 'Impecável',
+                images: [
+                    'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80'
+                ],
+                features: ['Teto Solar', 'Honda LaneWatch', 'Carregador por Indução', 'Bancos Elétricos', 'Revisado']
+            },
+            {
+                id: 5,
+                name: 'Volkswagen Polo Highline 200 TSI',
+                category: 'Hatch',
+                year: 2023,
+                price: 94900,
+                km: '19.800 km',
+                transmission: 'Automático 6v',
+                fuel: 'Turbo Flex',
+                power: '128 cv',
+                badge: 'Baixa KM',
+                images: [
+                    'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80'
+                ],
+                features: ['VW Play 10"', 'Painel Active Info', 'Sensor Dianteiro e Traseiro', 'Piloto Automático', 'Garantia']
+            },
+            {
+                id: 6,
+                name: 'Fiat Toro Volcano 2.0 Diesel 4x4',
+                category: 'Pickup',
+                year: 2022,
+                price: 146900,
+                km: '44.000 km',
+                transmission: 'Automático 9v',
+                fuel: 'Diesel',
+                power: '170 cv',
+                badge: 'Tração 4x4',
+                images: [
+                    'https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80'
+                ],
+                features: ['Tração 4x4 Integral', 'Capota Marítima', 'Bancos em Couro', 'Central Multimídia Vertical', 'Cautelar OK']
+            }
+        ];
+
+        // Scanner Diagnostic Points Data
+        const scannerPoints = [
+            {
+                step: 'ITEM 01 / 05',
+                title: 'Estrutura, Longarinas e Chassi',
+                desc: 'Inspeção técnica minuciosa em todos os pontos estruturais, colunas, assoalho, painel corta-fogo e gravações originais de fábrica de chassi, motor e vidros. Garantimos integridade total sem batidas estruturais.',
+                metric: '100% Laudo Aprovado'
+            },
+            {
+                step: 'ITEM 02 / 05',
+                title: 'Consulta Leilão, Sinistro e Furto',
+                desc: 'Verificação completa junto às bases nacionais (BIN/RENAVAM), histórico de seguradoras e leilões. Na Lucas dos Carros comercializamos exclusivamente veículos sem passagem por leilão ou sinistro.',
+                metric: 'Zero Restrições'
+            },
+            {
+                step: 'ITEM 03 / 05',
+                title: 'Revisão de Motor, Câmbio e Suspensão',
+                desc: 'Checklist mecânico completo antes da entrega: fluídos, filtros, sistema de freios, suspensão, arrefecimento e diagnóstico eletrônico via scanner OBD2.',
+                metric: 'Revisado no Pátio'
+            },
+            {
+                step: 'ITEM 04 / 05',
+                title: 'Aferição de Pintura e Originalidade',
+                desc: 'Medição micrométrica da espessura da lataria para identificar repinturas e atestar a originalidade e o cuidado dos antigos proprietários.',
+                metric: 'Padrão Original'
+            },
+            {
+                step: 'ITEM 05 / 05',
+                title: 'Documentação e Transferência Ágil',
+                desc: 'Despachante credenciado para emissão rápida do ATPV-e e transferência segura para o seu nome, sem pendências de multas ou débitos anteriores.',
+                metric: 'Entrega Imediata'
+            }
+        ];
+
+        // Application State
+        let currentCategory = 'Todos';
+        let maxPriceFilter = 300000;
+        let favorites = [];
+        let compareList = [];
+        let selectedParcelas = 48;
+        let currentCarModalObj = null;
+
+        // Currency Formatter
+        function formatBRL(value) {
+            return Number(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+        }
+
+        function formatBRLDecimals(value) {
+            return Number(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        // Toast Helper (non-blocking replacement for alert)
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const msgEl = document.getElementById('toastMessage');
+            if (!toast || !msgEl) return;
+            msgEl.textContent = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            clearTimeout(window._toastTimer);
+            window._toastTimer = setTimeout(function() {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
+        }
+
+        // Store Business Hours Telemetry
+        function checkStoreStatus() {
+            const badge = document.getElementById('storeStatusBadge');
+            if (!badge) return;
+            const now = new Date();
+            const day = now.getDay(); // 0 = Sun, 6 = Sat
+            const hour = now.getHours();
+            const isOpenWeekday = day >= 1 && day <= 5 && hour >= 8 && hour < 18;
+            const isOpenSaturday = day === 6 && hour >= 8 && hour < 13;
+
+            if (isOpenWeekday || isOpenSaturday) {
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span><span>Loja Aberta Agora</span>';
+                badge.className = 'inline-flex items-center gap-1.5 font-semibold text-emerald-400';
+            } else {
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-amber-400"></span><span>Plantão Online WhatsApp</span>';
+                badge.className = 'inline-flex items-center gap-1.5 font-semibold text-amber-400';
+            }
+        }
+
+        // Category & Price Filtering
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(function(btn) {
+                if (btn.textContent.trim().startsWith(cat) || (cat === 'SUV' && btn.textContent.trim() === 'SUVs') || (cat === 'Sedan' && btn.textContent.trim() === 'Sedans') || (cat === 'Hatch' && btn.textContent.trim() === 'Hatchbacks') || (cat === 'Pickup' && btn.textContent.trim() === 'Pickups') || (cat === 'Esportivo' && btn.textContent.trim() === 'Esportivos')) {
+                    btn.className = 'cat-btn active px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-cyber-dark transition';
+                } else {
+                    btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyber-card text-slate-300 hover:bg-slate-800 border border-slate-800 transition';
+                }
+            });
+            renderCars();
+        }
+
+        function updatePriceFilter(val) {
+            maxPriceFilter = Number(val);
+            const display = document.getElementById('priceRangeValue');
+            if (display) {
+                display.textContent = 'Até ' + formatBRL(maxPriceFilter);
+            }
+            renderCars();
+        }
+
+        function resetFilters() {
+            const searchInput = document.getElementById('searchInput');
+            const priceRange = document.getElementById('priceRange');
+            if (searchInput) searchInput.value = '';
+            if (priceRange) priceRange.value = 300000;
+            maxPriceFilter = 300000;
+            updatePriceFilter(300000);
+            setCategory('Todos');
+        }
+
+        // Favorites System
+        function toggleFavorite(id) {
+            if (favorites.indexOf(id) !== -1) {
+                favorites = favorites.filter(function(item) { return item !== id; });
+                showToast('Veículo removido dos favoritos.');
+            } else {
+                favorites.push(id);
+                showToast('Veículo salvo nos favoritos!');
+            }
+            const favBadge = document.getElementById('favCountBadge');
+            if (favBadge) favBadge.textContent = String(favorites.length);
+            renderCars();
+        }
+
+        // Comparison System
+        function toggleCompare(id) {
+            if (compareList.indexOf(id) !== -1) {
+                compareList = compareList.filter(function(item) { return item !== id; });
+            } else {
+                if (compareList.length >= 2) {
+                    showToast('Você pode comparar até 2 veículos simultaneamente.');
+                    return;
+                }
+                compareList.push(id);
+                showToast('Adicionado ao comparador (' + compareList.length + '/2).');
+            }
+            const c1 = document.getElementById('compareCount');
+            const c2 = document.getElementById('compareCountMobile');
+            if (c1) c1.textContent = String(compareList.length);
+            if (c2) c2.textContent = String(compareList.length);
+            renderCars();
+        }
+
+        function openCompareModal() {
+            if (compareList.length === 0) {
+                showToast('Selecione pelo menos 1 veículo no estoque para comparar.');
+                return;
+            }
+            const selectedCars = carsData.filter(function(c) { return compareList.indexOf(c.id) !== -1; });
+            const body = document.getElementById('compareModalBody');
+            const modal = document.getElementById('compareModal');
+            if (!body || !modal) return;
+
+            let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">';
+            selectedCars.forEach(function(car) {
+                const waText = encodeURIComponent('Olá! Tenho interesse no ' + car.name + ' (' + car.year + ') que vi no comparador do site.');
+                html += '<div class="bg-cyber-dark border border-slate-800 rounded-2xl p-5 space-y-4">' +
+                    '<img src="' + car.images[0] + '" alt="' + car.name + '" class="w-full h-44 object-cover rounded-xl">' +
+                    '<div class="flex items-start justify-between">' +
+                        '<div>' +
+                            '<div class="text-xs font-bold text-amber-400 uppercase">' + car.category + '</div>' +
+                            '<h4 class="text-lg font-extrabold text-white">' + car.name + '</h4>' +
+                        '</div>' +
+                        '<span class="px-2.5 py-1 rounded bg-slate-800 text-xs font-bold">' + car.year + '</span>' +
+                    '</div>' +
+                    '<div class="text-2xl font-extrabold text-gold-gradient">' + formatBRL(car.price) + '</div>' +
+                    '<div class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-3">' +
+                        '<div class="flex justify-between"><span class="text-slate-400">Quilometragem:</span><span class="font-bold">' + car.km + '</span></div>' +
+                        '<div class="flex justify-between"><span class="text-slate-400">Câmbio:</span><span class="font-bold">' + car.transmission + '</span></div>' +
+                        '<div class="flex justify-between"><span class="text-slate-400">Combustível:</span><span class="font-bold">' + car.fuel + '</span></div>' +
+                        '<div class="flex justify-between"><span class="text-slate-400">Potência:</span><span class="font-bold">' + car.power + '</span></div>' +
+                    '</div>' +
+                    '<div class="pt-2 flex gap-2">' +
+                        '<a href="https://wa.me/5531994760811?text=' + waText + '" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold text-center">Negociar no WhatsApp</a>' +
+                        '<button type="button" onclick="toggleCompare(' + car.id + '); closeCompareModal();" class="px-3 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold">Remover</button>' +
+                    '</div>' +
+                '</div>';
+            });
+            html += '</div>';
+
+            body.innerHTML = html;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCompareModal() {
+            const modal = document.getElementById('compareModal');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Render Inventory Cards
+        function renderCars() {
+            const grid = document.getElementById('carsGrid');
+            const emptyState = document.getElementById('emptyState');
+            const searchInput = document.getElementById('searchInput');
+            if (!grid || !emptyState) return;
+
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+            const filtered = carsData.filter(function(car) {
+                const matchesSearch = car.name.toLowerCase().indexOf(query) !== -1 || String(car.year).indexOf(query) !== -1 || car.category.toLowerCase().indexOf(query) !== -1;
+                const matchesPrice = car.price <= maxPriceFilter;
+                let matchesCategory = true;
+                if (currentCategory === 'Favoritos') {
+                    matchesCategory = favorites.indexOf(car.id) !== -1;
+                } else if (currentCategory !== 'Todos') {
+                    matchesCategory = car.category === currentCategory;
+                }
+                return matchesSearch && matchesPrice && matchesCategory;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            let cardsHtml = '';
+            filtered.forEach(function(car) {
+                const isFav = favorites.indexOf(car.id) !== -1;
+                const isComp = compareList.indexOf(car.id) !== -1;
+                const waMsg = encodeURIComponent('Olá! Tenho interesse no ' + car.name + ' (' + car.year + ') - ' + formatBRL(car.price) + '.');
+
+                cardsHtml += '<div class="bg-cyber-surface border border-slate-800 hover:border-amber-500/40 rounded-3xl overflow-hidden transition group flex flex-col justify-between shadow-lg">' +
+                    '<div>' +
+                        '<div class="relative h-56 overflow-hidden bg-zinc-900">' +
+                            '<img src="' + car.images[0] + '" alt="' + car.name + '" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">' +
+                            '<span class="absolute top-3 left-3 bg-cyber-dark/90 border border-amber-500/30 text-amber-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">' + car.badge + '</span>' +
+                            '<div class="absolute top-3 right-3 flex items-center gap-2">' +
+                                '<button type="button" onclick="toggleCompare(' + car.id + ')" title="Comparar veículo" class="w-8 h-8 rounded-full ' + (isComp ? 'bg-cyan-500 text-cyber-dark' : 'bg-cyber-dark/85 text-slate-200 hover:text-cyan-400') + ' flex items-center justify-center text-xs transition">' +
+                                    '<i class="fa-solid fa-code-compare"></i>' +
+                                '</button>' +
+                                '<button type="button" onclick="toggleFavorite(' + car.id + ')" title="Favoritar" class="w-8 h-8 rounded-full bg-cyber-dark/85 ' + (isFav ? 'text-pink-500' : 'text-slate-200 hover:text-pink-400') + ' flex items-center justify-center text-xs transition">' +
+                                    '<i class="fa-solid fa-heart"></i>' +
+                                '</button>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="p-5 space-y-3">' +
+                            '<div class="flex items-start justify-between gap-2">' +
+                                '<div>' +
+                                    '<span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">' + car.category + '</span>' +
+                                    '<h3 class="text-lg font-extrabold text-white leading-snug">' + car.name + '</h3>' +
+                                '</div>' +
+                                '<span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-bold">' + car.year + '</span>' +
+                            '</div>' +
+                            '<div class="grid grid-cols-3 gap-2 py-2.5 border-y border-slate-800 text-[11px] text-slate-300">' +
+                                '<span class="flex items-center gap-1"><i class="fa-solid fa-gauge text-slate-500"></i> ' + car.km + '</span>' +
+                                '<span class="flex items-center gap-1"><i class="fa-solid fa-gears text-slate-500"></i> ' + car.transmission.split(' ')[0] + '</span>' +
+                                '<span class="flex items-center gap-1"><i class="fa-solid fa-gas-pump text-slate-500"></i> ' + car.fuel + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="px-5 pb-5 pt-1 flex items-center justify-between gap-2">' +
+                        '<div>' +
+                            '<div class="text-[10px] text-slate-400 uppercase font-semibold">À Vista</div>' +
+                            '<div class="text-xl font-extrabold text-gold-gradient">' + formatBRL(car.price) + '</div>' +
+                        '</div>' +
+                        '<div class="flex items-center gap-2">' +
+                            '<button type="button" onclick="openCarModal(' + car.id + ')" class="px-3.5 py-2.5 bg-cyber-card hover:bg-slate-800 border border-slate-700 text-slate-200 rounded-xl text-xs font-bold transition">Detalhes</button>' +
+                            '<a href="https://wa.me/5531994760811?text=' + waMsg + '" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition inline-flex items-center gap-1.5">' +
+                                '<i class="fa-brands fa-whatsapp"></i> Tenho Interesse' +
+                            '</a>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            });
+
+            grid.innerHTML = cardsHtml;
+        }
+
+        // Vehicle Details Modal
+        function openCarModal(id) {
+            const car = carsData.find(function(c) { return c.id === id; });
+            const modal = document.getElementById('carModal');
+            const body = document.getElementById('carModalBody');
+            if (!car || !modal || !body) return;
+
+            currentCarModalObj = car;
+            const waMsg = encodeURIComponent('Olá! Gostaria de mais informações sobre o ' + car.name + ' (' + car.year + ').');
+
+            let thumbsHtml = '';
+            car.images.forEach(function(imgUrl, index) {
+                thumbsHtml += '<button type="button" onclick="switchModalPhoto(' + index + ')" class="h-16 w-24 rounded-xl overflow-hidden border-2 ' + (index === 0 ? 'border-amber-400' : 'border-slate-700') + ' modal-thumb">' +
+                    '<img src="' + imgUrl + '" alt="Foto ' + (index + 1) + '" class="w-full h-full object-cover">' +
+                '</button>';
+            });
+
+            let featuresHtml = '';
+            car.features.forEach(function(feat) {
+                featuresHtml += '<span class="px-3 py-1.5 rounded-lg bg-cyber-dark border border-slate-800 text-xs text-slate-200 flex items-center gap-1.5">' +
+                    '<i class="fa-solid fa-check text-amber-400 text-[10px]"></i> ' + feat +
+                '</span>';
+            });
+
+            body.innerHTML = '<div class="space-y-6">' +
+                '<div>' +
+                    '<span class="text-xs font-bold text-amber-400 uppercase tracking-wider">' + car.category + ' • ' + car.badge + '</span>' +
+                    '<h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">' + car.name + ' (' + car.year + ')</h3>' +
+                '</div>' +
+                '<div class="space-y-3">' +
+                    '<div class="h-64 sm:h-80 rounded-2xl overflow-hidden bg-zinc-900">' +
+                        '<img id="modalMainImage" src="' + car.images[0] + '" alt="' + car.name + '" class="w-full h-full object-cover">' +
+                    '</div>' +
+                    '<div class="flex gap-2">' + thumbsHtml + '</div>' +
+                '</div>' +
+                '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">' +
+                    '<div class="bg-cyber-dark p-3 rounded-xl border border-slate-800"><span class="text-slate-400 block">Quilometragem</span><strong class="text-white text-sm">' + car.km + '</strong></div>' +
+                    '<div class="bg-cyber-dark p-3 rounded-xl border border-slate-800"><span class="text-slate-400 block">Câmbio</span><strong class="text-white text-sm">' + car.transmission + '</strong></div>' +
+                    '<div class="bg-cyber-dark p-3 rounded-xl border border-slate-800"><span class="text-slate-400 block">Combustível</span><strong class="text-white text-sm">' + car.fuel + '</strong></div>' +
+                    '<div class="bg-cyber-dark p-3 rounded-xl border border-slate-800"><span class="text-slate-400 block">Potência</span><strong class="text-white text-sm">' + car.power + '</strong></div>' +
+                '</div>' +
+                '<div>' +
+                    '<div class="text-xs font-bold text-slate-400 uppercase mb-2">Itens e Diferenciais</div>' +
+                    '<div class="flex flex-wrap gap-2">' + featuresHtml + '</div>' +
+                '</div>' +
+                '<div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">' +
+                    '<div>' +
+                        '<div class="text-xs text-slate-400">Valor à Vista</div>' +
+                        '<div class="text-3xl font-extrabold text-gold-gradient">' + formatBRL(car.price) + '</div>' +
+                    '</div>' +
+                    '<div class="flex flex-col sm:flex-row gap-2.5">' +
+                        '<button type="button" onclick="selectCarForFinance(' + car.id + ')" class="px-5 py-3.5 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-400 rounded-xl text-xs font-bold transition">Simular Parcelas</button>' +
+                        '<a href="https://wa.me/5531994760811?text=' + waMsg + '" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">' +
+                            '<i class="fa-brands fa-whatsapp text-base"></i> Falar com Consultor' +
+                        '</a>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function switchModalPhoto(index) {
+            if (!currentCarModalObj) return;
+            const mainImg = document.getElementById('modalMainImage');
+            if (mainImg && currentCarModalObj.images[index]) {
+                mainImg.src = currentCarModalObj.images[index];
+            }
+            document.querySelectorAll('.modal-thumb').forEach(function(btn, idx) {
+                btn.className = 'h-16 w-24 rounded-xl overflow-hidden border-2 ' + (idx === index ? 'border-amber-400' : 'border-slate-700') + ' modal-thumb';
+            });
+        }
+
+        function closeCarModal() {
+            const modal = document.getElementById('carModal');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function selectCarForFinance(id) {
+            closeCarModal();
+            const select = document.getElementById('calcCarSelect');
+            if (select) {
+                select.value = String(id);
+                handleCalcCarChange();
+            }
+            const sec = document.getElementById('financiamento');
+            if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scanner Diagnostic Tabs
+        function selectScannerPoint(idx) {
+            const point = scannerPoints[idx];
+            if (!point) return;
+
+            document.querySelectorAll('.scan-btn').forEach(function(btn, i) {
+                if (i === idx) {
+                    btn.className = 'scan-btn active w-full text-left p-4 rounded-2xl bg-amber-500/15 border border-amber-500/50 transition flex items-center justify-between';
+                } else {
+                    btn.className = 'scan-btn w-full text-left p-4 rounded-2xl bg-cyber-card border border-slate-800 hover:border-slate-700 transition flex items-center justify-between';
+                }
+            });
+
+            const stepEl = document.getElementById('scanStepCode');
+            const titleEl = document.getElementById('scanTitle');
+            const descEl = document.getElementById('scanDesc');
+            const metricEl = document.getElementById('scanMetric');
+
+            if (stepEl) stepEl.textContent = point.step;
+            if (titleEl) titleEl.textContent = point.title;
+            if (descEl) descEl.textContent = point.desc;
+            if (metricEl) metricEl.textContent = point.metric;
+        }
+
+        // Financing Calculator Logic
+        function initCalculatorSelect() {
+            const select = document.getElementById('calcCarSelect');
+            if (!select) return;
+            let optionsHtml = '';
+            carsData.forEach(function(car) {
+                optionsHtml += '<option value="' + car.id + '">' + car.name + ' (' + car.year + ') - ' + formatBRL(car.price) + '</option>';
+            });
+            select.innerHTML = optionsHtml;
+        }
+
+        function getSelectedCalcCar() {
+            const select = document.getElementById('calcCarSelect');
+            const id = select ? Number(select.value) : carsData[0].id;
+            return carsData.find(function(c) { return c.id === id; }) || carsData[0];
+        }
+
+        function handleCalcCarChange() {
+            const car = getSelectedCalcCar();
+            const slider = document.getElementById('downPaymentSlider');
+            if (slider) {
+                slider.max = Math.round(car.price * 0.8);
+                if (Number(slider.value) > Number(slider.max)) {
+                    slider.value = Math.round(car.price * 0.2);
+                }
+            }
+            updateCalculator();
+        }
+
+        function setDownPaymentPercent(pct) {
+            const car = getSelectedCalcCar();
+            const slider = document.getElementById('downPaymentSlider');
+            if (slider) {
+                slider.value = Math.round(car.price * pct);
+            }
+            updateCalculator();
+        }
+
+        function setParcelas(n) {
+            selectedParcelas = n;
+            document.querySelectorAll('.parcela-btn').forEach(function(btn) {
+                if (btn.textContent.trim() === n + 'x') {
+                    btn.className = 'parcela-btn active bg-amber-500/20 text-amber-400 border border-amber-500/50 py-2 rounded-lg font-bold text-xs';
+                } else {
+                    btn.className = 'parcela-btn bg-slate-800 hover:bg-slate-700 text-slate-300 py-2 rounded-lg font-bold text-xs';
+                }
+            });
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            const car = getSelectedCalcCar();
+            const slider = document.getElementById('downPaymentSlider');
+            const bankSelect = document.getElementById('bankSelect');
+
+            const downPayment = slider ? Number(slider.value) : 20000;
+            const rate = bankSelect ? Number(bankSelect.value) : 0.0159;
+            const financed = Math.max(0, car.price - downPayment);
+
+            // Standard PMT Formula
+            let installment = 0;
+            if (financed > 0) {
+                const factor = Math.pow(1 + rate, selectedParcelas);
+                installment = (financed * (rate * factor)) / (factor - 1);
+            }
+
+            const dpDisplay = document.getElementById('downPaymentDisplay');
+            const sumPrice = document.getElementById('summaryVehiclePrice');
+            const sumDp = document.getElementById('summaryDownPayment');
+            const sumFin = document.getElementById('summaryFinanced');
+            const sumTerm = document.getElementById('summaryTerm');
+            const monthlyEl = document.getElementById('monthlyInstallment');
+
+            if (dpDisplay) dpDisplay.textContent = formatBRL(downPayment);
+            if (sumPrice) sumPrice.textContent = formatBRL(car.price);
+            if (sumDp) sumDp.textContent = formatBRL(downPayment);
+            if (sumFin) sumFin.textContent = formatBRL(financed);
+            if (sumTerm) sumTerm.textContent = selectedParcelas + 'x';
+            if (monthlyEl) monthlyEl.textContent = formatBRLDecimals(installment);
+        }
+
+        function sendFinancingWhatsApp() {
+            const car = getSelectedCalcCar();
+            const slider = document.getElementById('downPaymentSlider');
+            const bankSelect = document.getElementById('bankSelect');
+            const monthlyEl = document.getElementById('monthlyInstallment');
+
+            const downPayment = slider ? Number(slider.value) : 20000;
+            const bankName = bankSelect ? bankSelect.options[bankSelect.selectedIndex].text : 'Banco Parceiro';
+            const installmentStr = monthlyEl ? monthlyEl.textContent : '';
+
+            const lines = [
+                'Olá, Lucas dos Carros! Gostaria de aprovar uma simulação de financiamento:',
+                '• Veículo: ' + car.name + ' (' + car.year + ')',
+                '• Valor: ' + formatBRL(car.price),
+                '• Entrada: ' + formatBRL(downPayment),
+                '• Prazo: ' + selectedParcelas + 'x de ' + installmentStr,
+                '• Banco de preferência: ' + bankName
+            ];
+            const url = 'https://wa.me/5531994760811?text=' + encodeURIComponent(lines.join('\n'));
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // Trade-In Form Submission
+        function submitTradeIn(event) {
+            event.preventDefault();
+            const name = document.getElementById('ownerName').value.trim();
+            const phone = document.getElementById('ownerPhone').value.trim();
+            const model = document.getElementById('tradeCarModel').value.trim();
+            const km = document.getElementById('tradeCarKm').value.trim() || 'Não informado';
+            const intention = document.getElementById('tradeIntention').value;
+            const condition = document.getElementById('tradeCondition').value;
+
+            const lines = [
+                'Olá, Lucas dos Carros! Gostaria de solicitar uma avaliação do meu veículo:',
+                '• Nome: ' + name,
+                '• WhatsApp: ' + phone,
+                '• Veículo: ' + model,
+                '• KM: ' + km,
+                '• Objetivo: ' + intention,
+                '• Estado Geral: ' + condition
+            ];
+            const url = 'https://wa.me/5531994760811?text=' + encodeURIComponent(lines.join('\n'));
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showToast('Redirecionando para o WhatsApp da loja...');
+        }
+
+        // Mobile Drawer Controls
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) menu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) menu.classList.add('hidden');
+        }
+
+        // Typewriter Effect for Testimonials Heading
+        function initTestimonialsTypewriter() {
+            const target = document.getElementById('typewriterText');
+            const section = document.getElementById('avaliacoes');
+            if (!target || !section) return;
+
+            const phrases = [
+                'Nossos Clientes',
+                'Clientes 5 Estrelas',
+                'Quem Realizou um Sonho'
+            ];
+
+            let phraseIndex = 0;
+            let charIndex = phrases[0].length;
+            let isDeleting = true;
+            let started = false;
+
+            function tick() {
+                const currentPhrase = phrases[phraseIndex];
+
+                if (isDeleting) {
+                    charIndex--;
+                    target.textContent = currentPhrase.substring(0, charIndex);
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(tick, 350);
+                        return;
+                    }
+                    setTimeout(tick, 45);
+                } else {
+                    charIndex++;
+                    target.textContent = currentPhrase.substring(0, charIndex);
+                    if (charIndex === currentPhrase.length) {
+                        isDeleting = true;
+                        setTimeout(tick, 2200);
+                        return;
+                    }
+                    setTimeout(tick, 80);
+                }
+            }
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting && !started) {
+                            started = true;
+                            setTimeout(tick, 1400);
+                        }
+                    });
+                }, { threshold: 0.25 });
+                observer.observe(section);
+            } else {
+                setTimeout(tick, 1400);
+            }
+        }
+
+        // Safe Initialization
+        window.addEventListener('DOMContentLoaded', function() {
+            try {
+                checkStoreStatus();
+                initCalculatorSelect();
+                renderCars();
+                updateCalculator();
+                initTestimonialsTypewriter();
+            } catch (err) {
+                console.error('Erro na inicialização:', err);
+            }
+        });
+    </script>
+</body>
+</html>
